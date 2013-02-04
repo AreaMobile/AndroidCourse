@@ -40,7 +40,7 @@ public class InputFragment extends Fragment implements OnClickListener{
 		return v;
 	}
 
-	public void setListener(OnNewInputListener listener){
+	public void setOnNewInputListener(OnNewInputListener listener){
 		mListener=listener;
 	}
 	
