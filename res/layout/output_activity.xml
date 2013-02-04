@@ -19,7 +19,7 @@
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ok"
+        android:text="@android:string/ok"
         android:layout_below="@id/OutputFragment2" />
 
 </RelativeLayout>

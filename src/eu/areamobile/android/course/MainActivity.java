@@ -31,6 +31,7 @@ public class MainActivity extends FragmentActivity
 		startActivityForResult(message, REQUEST_PREVIEW);
 	}
 	
+	@SuppressWarnings("unused")
 	private void showTextInNewActivity(String text){
 		final Intent message = new Intent(this,OutputActivity.class);
 		message.putExtra(OutputActivity.EXTRA_MESSAGE, text);
