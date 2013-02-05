@@ -22,13 +22,7 @@ public class InputFragment extends Fragment implements OnClickListener{
 		public void onNewInput(String inputText);
 	}
 	
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		if(activity instanceof OnNewInputListener){
-			mListener=(OnNewInputListener)activity;
-		}
-	}
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +34,14 @@ public class InputFragment extends Fragment implements OnClickListener{
 		return v;
 	}
 
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		if(activity instanceof OnNewInputListener){
+			Log.wtf(TAG, "");
+			mListener=(OnNewInputListener)activity;
+		}
+	}
 	public void setOnNewInputListener(OnNewInputListener listener){
 		mListener=listener;
 	}

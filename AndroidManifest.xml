@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity android:name=".OutputActivity"></activity>
-        
+        <activity android:name=".InteractiveList"></activity>
         <activity
             android:name="eu.areamobile.android.course.MainActivity"
             android:label="@string/app_name" >

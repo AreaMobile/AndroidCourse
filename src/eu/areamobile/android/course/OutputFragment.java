@@ -1,3 +1,5 @@
+
+
 package eu.areamobile.android.course;
 
 import android.os.Bundle;

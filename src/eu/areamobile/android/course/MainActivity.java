@@ -17,6 +17,8 @@ public class MainActivity extends FragmentActivity
 		setContentView(R.layout.main);
 		FragmentManager mgr = getSupportFragmentManager();
 		mOtput=(OutputFragment)mgr.findFragmentById(R.id.OutputFragment);
+//		InputFragment f= (InputFragment)mgr.findFragmentById(R.id.InputFragment);
+//		f.setOnNewInputListener(this);
 //		mInput=(InputFragment)mgr.findFragmentById(R.id.InputFragment);
 	}
 

@@ -14,5 +14,4 @@
         android:layout_height="wrap_content"
         tools:layout="@layout/input"
         android:id="@+id/InputFragment"/>
-	
 </LinearLayout>
