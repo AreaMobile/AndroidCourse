@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:descendantFocusability="blocksDescendants">
+    <CheckBox android:id="@+id/check_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Try Check me"/>
+    
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:textSize="32dp"
+    android:textColor="#FF0000"
+    android:id="@+id/row_name"/>
+	   <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:textSize="24dp"
+    android:textColor="#0000FF"
+    android:id="@+id/row_language"/>
+
+</LinearLayout>

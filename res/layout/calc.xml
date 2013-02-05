@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- <android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
- -->
-<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+<!-- 
+<android.support.v7.widget.GridLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="4">
@@ -18,4 +21,4 @@
 <Button android:layout_column="2"
         android:layout_row="1"/>
 </android.support.v7.widget.GridLayout>
-<!-- </android.support.v7.widget.GridLayout> -->
+-->

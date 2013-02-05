@@ -1,9 +1,12 @@
 package eu.areamobile.android.course;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends FragmentActivity 
    implements InputFragment.OnNewInputListener{
@@ -20,6 +23,16 @@ public class MainActivity extends FragmentActivity
 //		InputFragment f= (InputFragment)mgr.findFragmentById(R.id.InputFragment);
 //		f.setOnNewInputListener(this);
 //		mInput=(InputFragment)mgr.findFragmentById(R.id.InputFragment);
+		
+		
+		findViewById(R.id.btn_sample_list).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				final Intent intent =new Intent(MainActivity.this,SampleList.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	@Override
@@ -54,6 +67,11 @@ public class MainActivity extends FragmentActivity
 				
 			}
 		}
+	}
+	
+	private void sampleAppAccess(){
+		SampleApp app=(SampleApp)getApplication();
+		app.setName("");
 	}
 
 }
