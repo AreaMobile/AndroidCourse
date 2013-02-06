@@ -1,6 +1,6 @@
 package eu.areamobile.android.course;
 
-import android.app.Application;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -33,6 +33,15 @@ public class MainActivity extends FragmentActivity
 				startActivity(intent);
 			}
 		});
+		
+		findViewById(R.id.btn_sample_async).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				final Intent intent =new Intent(MainActivity.this,AsyncActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	@Override
@@ -44,6 +53,17 @@ public class MainActivity extends FragmentActivity
 		final Intent message = new Intent(this,OutputActivity.class);
 		message.putExtra(OutputActivity.EXTRA_MESSAGE, text);
 		startActivityForResult(message, REQUEST_PREVIEW);
+	}
+	
+	private void showPreviewExplicit(String text){
+		final Intent message= new Intent("");
+		message.addCategory(Intent.CATEGORY_DEFAULT);
+		message.putExtra(OutputActivity.EXTRA_MESSAGE, text);
+		try{
+			startActivityForResult(message, REQUEST_PREVIEW);
+		}catch(ActivityNotFoundException e){
+			
+		}
 	}
 	
 	@SuppressWarnings("unused")

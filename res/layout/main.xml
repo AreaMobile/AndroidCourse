@@ -18,4 +18,8 @@
         android:layout_height="wrap_content"
         android:text="Sample List"
         android:id="@+id/btn_sample_list"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Async"
+        android:id="@+id/btn_sample_async"/>
 </LinearLayout>

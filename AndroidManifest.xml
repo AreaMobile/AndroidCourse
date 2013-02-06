@@ -15,8 +15,15 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
        
-        <activity android:name=".OutputActivity"></activity>
+        <activity android:name=".OutputActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="eu.areamobile.android.course.intent.action.OUTPUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".SampleList"></activity>
+         <activity android:name=".AsyncActivity"></activity>
         <activity
             android:name="eu.areamobile.android.course.MainActivity"
             android:label="@string/app_name" >
