@@ -48,10 +48,11 @@ public class AsyncActivity extends FragmentActivity implements OnClickListener{
 	@Override
 	protected void onPause() {
 		super.onPause();
-		mTask.cancel(true);
-		mTask =null;
-		mStarted =true;
-		
+		if(mTask!=null){
+			mTask.cancel(true);
+			mTask =null;
+			mStarted =true;
+		}
 	}
 	
 	@Override
@@ -69,6 +70,8 @@ public class AsyncActivity extends FragmentActivity implements OnClickListener{
 	public void onClick(View v) {
 		//slowOperation();
 		//slooooooow(20000);
+//		SampleConnecting.downloadInBackground();
+//		SampleConnecting.postInBackground();
 		startAsyncTask(20000);
 		mTask =startAsyncTaskControlled(20000);
 	}
