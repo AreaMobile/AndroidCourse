@@ -8,6 +8,18 @@
         android:layout_height="wrap_content"
         android:text="Start!!!"/>
     
+    <Button android:id="@+id/btn_disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"/>
+    
+    <Button android:id="@+id/btn_do_sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Work"/>
+    
+    
+    
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/console_output"/>

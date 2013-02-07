@@ -22,4 +22,8 @@
         android:layout_height="wrap_content"
         android:text="Async"
         android:id="@+id/btn_sample_async"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Services"
+        android:id="@+id/btn_sample_services"/>
 </LinearLayout>

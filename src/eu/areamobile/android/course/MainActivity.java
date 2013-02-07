@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 public class MainActivity extends FragmentActivity 
-   implements InputFragment.OnNewInputListener{
+   implements InputFragment.OnNewInputListener,
+   View.OnClickListener{
 	private final static int REQUEST_PREVIEW=1;
 	private OutputFragment mOtput;
 //	private InputFragment mInput;
@@ -24,24 +24,27 @@ public class MainActivity extends FragmentActivity
 //		f.setOnNewInputListener(this);
 //		mInput=(InputFragment)mgr.findFragmentById(R.id.InputFragment);
 		
+		findViewById(R.id.btn_sample_list).setOnClickListener(this);
+		findViewById(R.id.btn_sample_async).setOnClickListener(this);
+		findViewById(R.id.btn_sample_services).setOnClickListener(this);
 		
-		findViewById(R.id.btn_sample_list).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				final Intent intent =new Intent(MainActivity.this,SampleList.class);
-				startActivity(intent);
-			}
-		});
-		
-		findViewById(R.id.btn_sample_async).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				final Intent intent =new Intent(MainActivity.this,AsyncActivity.class);
-				startActivity(intent);
-			}
-		});
+//		findViewById(R.id.btn_sample_list).setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				final Intent intent =new Intent(MainActivity.this,SampleList.class);
+//				startActivity(intent);
+//			}
+//		});
+//		
+//		findViewById(R.id.btn_sample_async).setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				final Intent intent =new Intent(MainActivity.this,AsyncActivity.class);
+//				startActivity(intent);
+//			}
+//		});
 	}
 
 	@Override
@@ -92,6 +95,25 @@ public class MainActivity extends FragmentActivity
 	private void sampleAppAccess(){
 		SampleApp app=(SampleApp)getApplication();
 		app.setName("");
+	}
+
+	@Override
+	public void onClick(View v) {
+		final Class<?> clazz;
+		switch (v.getId()) {
+		case R.id.btn_sample_list:
+			clazz = SampleList.class;
+			break;
+		case R.id.btn_sample_async:
+			clazz = AsyncActivity.class;
+			break;
+		case R.id.btn_sample_services:
+			clazz = ServiceActivity.class; //TODO add clazz
+			break;
+		default: throw new AssertionError("WTF!!!");
+		}
+		final Intent intent= new Intent(this,clazz);
+		startActivity(intent);
 	}
 
 }
