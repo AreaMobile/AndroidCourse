@@ -27,7 +27,7 @@ public class MainActivity extends FragmentActivity
 		findViewById(R.id.btn_sample_list).setOnClickListener(this);
 		findViewById(R.id.btn_sample_async).setOnClickListener(this);
 		findViewById(R.id.btn_sample_services).setOnClickListener(this);
-		
+		findViewById(R.id.btn_sample_provider).setOnClickListener(this);
 //		findViewById(R.id.btn_sample_list).setOnClickListener(new OnClickListener() {
 //			
 //			@Override
@@ -109,6 +109,9 @@ public class MainActivity extends FragmentActivity
 			break;
 		case R.id.btn_sample_services:
 			clazz = ServiceActivity.class; //TODO add clazz
+			break;
+		case R.id.btn_sample_provider:
+			clazz = TodoActivity.class;
 			break;
 		default: throw new AssertionError("WTF!!!");
 		}

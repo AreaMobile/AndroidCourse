@@ -141,13 +141,12 @@ public class AsyncActivity extends FragmentActivity implements OnClickListener{
 			@Override
 			public void run() {
 				Log.d(TAG,"STARTING...");
-				Runnable action = new Runnable() {
-					
-					@Override
-					public void run() {
+				Runnable action = new Runnable() {public void run() {
 						append("STARTING...");
+						finish();
 					}
 				};
+				
 				pubblishMessage(action);
 				AsyncActivity.this.runOnUiThread(action);
 				//append("STARTING...");

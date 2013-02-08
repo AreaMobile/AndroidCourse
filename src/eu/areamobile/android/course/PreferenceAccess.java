@@ -1,10 +1,15 @@
 package eu.areamobile.android.course;
 
+import java.util.Set;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Build;
+import android.os.Environment;
 
 public class PreferenceAccess {
 
@@ -13,12 +18,18 @@ public class PreferenceAccess {
 	private final static String USER_NAME_KEY = "username";
 	
 	@SuppressLint("NewApi")
-	public static void saveSomethingInPrefs(Context context){
+	public static void saveSomethingInPrefs(Context context,Activity a){
+		final SharedPreferences p = a.getPreferences(Context.MODE_PRIVATE);
+		
 		final SharedPreferences prefs = 
 				context.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
 		
+		Editor edit2 = prefs.edit();
+		
 		prefs.edit()
 			 .putString(USER_NAME_KEY, "Andrea")
+			 .putBoolean("FIRST_TIME", false)
+			 
 			 .commit(); // Commit scrive in modo sincrono su disco
 						// restituisce true se è tutto ok
 		
@@ -43,12 +54,23 @@ public class PreferenceAccess {
 		
 	}
 	
+	private void privateFolder(Context context){
+		context.getFilesDir();
+		context.getCacheDir();
+		
+//		context.getExternalFilesDir();
+	}
 	
+	@SuppressLint("NewApi")
 	private static void getSomethingFromPrefs(Context context){
 		final SharedPreferences prefs =
 				context.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
 		String userName =prefs.getString(USER_NAME_KEY, OTHERWISE_IF_NOT_PRESENT);
 		
+		
+		prefs.getBoolean("BOOLEAN_PREF", false);
+//		Set<String> s = prefs.getStringSet("SET_PREFS", null);
+//		Set<String> s2 = prefs.getStringSe("SET_PREFS", null);
 	}
 	
 	

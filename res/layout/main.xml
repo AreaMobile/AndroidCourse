@@ -26,4 +26,8 @@
         android:layout_height="wrap_content"
         android:text="Services"
         android:id="@+id/btn_sample_services"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Provider"
+        android:id="@+id/btn_sample_provider"/>
 </LinearLayout>
